@@ -1,0 +1,10 @@
+# Streamlit dashboard (app.py). Spark/Sedona are NOT needed to run the dashboard.
+streamlit==1.50.0
+pandas>=2.2,<3.0
+numpy>=1.26,<3.0
+pyarrow>=16
+plotly>=6.0,<7.0
+pydeck==0.9.3
+scikit-learn==1.9.1   # must match the version that saved severity_predictor.joblib
+joblib>=1.4
+h3>=4.0,<5.0         # H3 hexagon parents for the 3D column layer

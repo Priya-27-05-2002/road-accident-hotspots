@@ -1,0 +1,15 @@
+# Full analysis notebook (needs Java 17). Tested with Python 3.11.
+pyspark==3.5.3
+apache-sedona==1.7.1
+pandas>=2.2,<3.0
+pyarrow
+geopandas
+shapely>=2.0
+pyproj
+scikit-learn==1.9.1
+scipy
+joblib
+matplotlib
+openpyxl
+psycopg2-binary
+jupyter
