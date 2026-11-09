@@ -1,0 +1,39 @@
+{
+ "raw_records": 513801,
+ "study_records": 513745,
+ "missing_coordinates": 53,
+ "outside_gb": 3,
+ "years": "2021\u20132025",
+ "fatal": 7552,
+ "serious": 116796,
+ "slight": 389397,
+ "districts": 363,
+ "occupied_cells": 7617,
+ "grid_threshold": 64.0,
+ "persistent_cells": 257,
+ "gi_hot_99": 278,
+ "gi_hot_95": 83,
+ "kmeans_k": 15,
+ "dbscan_fatal_clusters": 114,
+ "dbscan_ksi_clusters": 186,
+ "dbscan_params": {
+  "fatal": {
+   "epsilon": 1000.0,
+   "min_pts": 4
+  },
+  "ksi": {
+   "epsilon": 150.0,
+   "min_pts": 12
+  }
+ },
+ "fp_itemsets": 468190,
+ "severity_rules": 11649,
+ "fp_min_support": 0.002,
+ "rf_macro_f1": 0.3460989241419427,
+ "postgis": {
+  "status": "skipped",
+  "reason": "OperationalError: connection to server at \"localhost\" (::1), port 55432 failed: Connection refused (0x0000274D/10061)\n\tIs the server running on that host and accepting TCP/IP connections?\nconnection to server at \"local"
+ },
+ "spark_version": "3.5.3",
+ "sedona_version": "1.7.1"
+}

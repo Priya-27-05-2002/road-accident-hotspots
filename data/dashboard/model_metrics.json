@@ -1,0 +1,256 @@
+{
+ "multiclass": [
+  {
+   "Model": "Logistic Regression",
+   "Accuracy": 0.7375,
+   "Weighted F1": 0.6304,
+   "Macro F1": 0.2889,
+   "Fatal recall": 0.0,
+   "Serious recall": 0.0091,
+   "Slight recall": 0.9968,
+   "Fatal precision": 0.0,
+   "Serious precision": 0.444,
+   "Train seconds": 18.9
+  },
+  {
+   "Model": "Class-Weighted Logistic Regression",
+   "Accuracy": 0.4709,
+   "Weighted F1": 0.5429,
+   "Macro F1": 0.3345,
+   "Fatal recall": 0.616,
+   "Serious recall": 0.3186,
+   "Slight recall": 0.5193,
+   "Fatal precision": 0.0341,
+   "Serious precision": 0.2976,
+   "Train seconds": 11.9
+  },
+  {
+   "Model": "Class-Weighted Random Forest",
+   "Accuracy": 0.5103,
+   "Weighted F1": 0.5691,
+   "Macro F1": 0.3461,
+   "Fatal recall": 0.5513,
+   "Serious recall": 0.2993,
+   "Slight recall": 0.5804,
+   "Fatal precision": 0.0379,
+   "Serious precision": 0.2951,
+   "Train seconds": 210.5
+  },
+  {
+   "Model": "HistGradientBoosting (dashboard predictor)",
+   "Accuracy": 0.4902,
+   "Weighted F1": 0.5556,
+   "Macro F1": 0.3435,
+   "Fatal recall": 0.563,
+   "Serious recall": 0.339,
+   "Slight recall": 0.5397,
+   "Fatal precision": 0.0365,
+   "Serious precision": 0.2962,
+   "Train seconds": 6.6
+  }
+ ],
+ "binary_ksi": [
+  {
+   "Model": "Class-Weighted GBT (KSI vs Slight)",
+   "ROC AUC": 0.6159,
+   "PR AUC": 0.3606,
+   "KSI recall": 0.5706,
+   "KSI precision": 0.3325,
+   "KSI F1": 0.4202,
+   "Train seconds": 56.0
+  },
+  {
+   "Model": "Class-Weighted RF (P(Fatal)+P(Serious))",
+   "ROC AUC": 0.6044,
+   "PR AUC": 0.3471,
+   "KSI recall": 0.9286,
+   "KSI precision": 0.2806,
+   "KSI F1": 0.431,
+   "Train seconds": NaN
+  }
+ ],
+ "confusion_matrices": {
+  "Logistic Regression": [
+   [
+    0,
+    48,
+    1405
+   ],
+   [
+    0,
+    230,
+    24959
+   ],
+   [
+    0,
+    240,
+    74640
+   ]
+  ],
+  "Class-Weighted Logistic Regression": [
+   [
+    895,
+    290,
+    268
+   ],
+   [
+    7989,
+    8025,
+    9175
+   ],
+   [
+    17344,
+    18650,
+    38886
+   ]
+  ],
+  "Class-Weighted Random Forest": [
+   [
+    801,
+    326,
+    326
+   ],
+   [
+    6616,
+    7540,
+    11033
+   ],
+   [
+    13733,
+    17683,
+    43464
+   ]
+  ]
+ },
+ "rf_feature_importance": {
+  "speed_limit": 0.2015,
+  "police_force": 0.1993,
+  "urban_or_rural_area": 0.1156,
+  "hour": 0.076,
+  "light_conditions": 0.0654,
+  "junction_control": 0.0524,
+  "road_type": 0.0459,
+  "first_road_class": 0.0377,
+  "day_of_week": 0.0357,
+  "junction_detail": 0.0354,
+  "pedestrian_crossing": 0.0288,
+  "month": 0.0277,
+  "trunk_road_flag": 0.0219,
+  "weather_conditions": 0.0217,
+  "carriageway_hazards": 0.0168,
+  "road_surface_conditions": 0.0134,
+  "is_weekend": 0.0048
+ },
+ "lad_risk_spearman": 0.659,
+ "class_names": [
+  "Fatal",
+  "Serious",
+  "Slight"
+ ],
+ "test_year": 2025,
+ "kmeans_scan": [
+  {
+   "k": 5,
+   "cost": 655768939.652,
+   "silhouette": 0.6314
+  },
+  {
+   "k": 10,
+   "cost": 320002724.9782,
+   "silhouette": 0.6381
+  },
+  {
+   "k": 15,
+   "cost": 227063250.9496,
+   "silhouette": 0.6045
+  },
+  {
+   "k": 20,
+   "cost": 161900131.9919,
+   "silhouette": 0.6013
+  },
+  {
+   "k": 25,
+   "cost": 132469010.8715,
+   "silhouette": 0.5911
+  },
+  {
+   "k": 30,
+   "cost": 103884412.9996,
+   "silhouette": 0.6203
+  },
+  {
+   "k": 40,
+   "cost": 74551420.3355,
+   "silhouette": 0.6056
+  },
+  {
+   "k": 50,
+   "cost": 58510643.1075,
+   "silhouette": 0.61
+  }
+ ],
+ "kmeans_k": 15,
+ "benchmark": [
+  {
+   "records": 51131,
+   "method": "Sedona ST_Contains join",
+   "median_seconds": 0.865
+  },
+  {
+   "records": 51131,
+   "method": "Spark + Shapely UDF (no Sedona)",
+   "median_seconds": 4.541
+  },
+  {
+   "records": 51131,
+   "method": "GeoPandas sjoin (single machine)",
+   "median_seconds": 0.181
+  },
+  {
+   "records": 128588,
+   "method": "Sedona ST_Contains join",
+   "median_seconds": 0.899
+  },
+  {
+   "records": 128588,
+   "method": "Spark + Shapely UDF (no Sedona)",
+   "median_seconds": 4.659
+  },
+  {
+   "records": 128588,
+   "method": "GeoPandas sjoin (single machine)",
+   "median_seconds": 0.546
+  },
+  {
+   "records": 257151,
+   "method": "Sedona ST_Contains join",
+   "median_seconds": 1.362
+  },
+  {
+   "records": 257151,
+   "method": "Spark + Shapely UDF (no Sedona)",
+   "median_seconds": 5.461
+  },
+  {
+   "records": 257151,
+   "method": "GeoPandas sjoin (single machine)",
+   "median_seconds": 1.223
+  },
+  {
+   "records": 513748,
+   "method": "Sedona ST_Contains join",
+   "median_seconds": 2.071
+  },
+  {
+   "records": 513748,
+   "method": "Spark + Shapely UDF (no Sedona)",
+   "median_seconds": 6.677
+  },
+  {
+   "records": 513748,
+   "method": "GeoPandas sjoin (single machine)",
+   "median_seconds": 1.953
+  }
+ ]
+}
