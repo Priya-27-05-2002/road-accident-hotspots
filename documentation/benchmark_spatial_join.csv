@@ -1,0 +1,13 @@
+records,method,median_seconds
+51131,Sedona ST_Contains join,0.865084171295166
+51131,Spark + Shapely UDF (no Sedona),4.541345119476318
+51131,GeoPandas sjoin (single machine),0.18061542510986328
+128588,Sedona ST_Contains join,0.8989002704620361
+128588,Spark + Shapely UDF (no Sedona),4.659461975097656
+128588,GeoPandas sjoin (single machine),0.5457901954650879
+257151,Sedona ST_Contains join,1.3624317646026611
+257151,Spark + Shapely UDF (no Sedona),5.460997819900513
+257151,GeoPandas sjoin (single machine),1.2234160900115967
+513748,Sedona ST_Contains join,2.0712993144989014
+513748,Spark + Shapely UDF (no Sedona),6.6770710945129395
+513748,GeoPandas sjoin (single machine),1.9531614780426025
