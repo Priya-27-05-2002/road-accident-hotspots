@@ -654,7 +654,7 @@ with tabs[7]:
                     f"<b style='color:{TEAL}'>{t_}</b><br><span style='font-size:.85rem'>{d_}</span></div>", unsafe_allow_html=True)
     st.markdown(f"""
 **Data.** UK Department for Transport STATS19 road collision data {summary['years']} ({summary['raw_records']:,} records;
-{summary['missing_coordinates']} without coordinates; {summary['outside_gb']} outside Great Britain). District boundaries:
+{summary['missing_coordinates']} without coordinates; {summary['outside_gb']} over water in the Severn and Mersey estuaries, more than 1 km from any district). District boundaries:
 ONS Local Authority Districts (Dec 2021). Both under the Open Government Licence v3.0.
 
 **Engine.** Apache Spark {summary['spark_version']} with Apache Sedona {summary['sedona_version']}.
